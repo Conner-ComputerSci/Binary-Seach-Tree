@@ -6,25 +6,24 @@ public class TreeManager {
         root = null; // Root starts as null, indicating an empty tree
     }
 
-    public boolean searchNode(int userID){
+    public boolean searchNode(int userID){ //Searches the database
         TreeNode<Integer> current = root; //Start from the root
         while(current != null){
-            if(userID < current.element){
+            if(userID < current.element){ //If values is less then, search left
                 current = current.left;
-
             }
-            else if(userID > current.element){
+            else if(userID > current.element){ //If value is greater then, search right
                 current = current.right;
-            }else{
-                return true;
+            }else{ //IF equal to, then it has been found
+                return true; 
                 //Element found
             }
             
-        }
+        }//If not found at all, return false
         return false;
     }
 
-    public static void preorderTraversal(TreeNode<Integer> n){
+    public static void preorderTraversal(TreeNode<Integer> n){ //Prints the data in preorder
         if(n == null){
             return;
         }
@@ -33,7 +32,7 @@ public class TreeManager {
         preorderTraversal(n.right);
     }
 
-    public static void postorderTraversal(TreeNode<Integer> n){
+    public static void postorderTraversal(TreeNode<Integer> n){ //prints the data in postorder
         if(n == null){
             return;
         }
@@ -42,7 +41,7 @@ public class TreeManager {
         System.out.print(n.element + ", ");
     }
 
-    public static void inorderTraversal(TreeNode<Integer> n){
+    public static void inorderTraversal(TreeNode<Integer> n){ //prints the data inorder
         if(n == null){
             return;
         }

@@ -1,3 +1,4 @@
+//TreeNode Object that holds information for each object
 public class TreeNode<E> {
     E element;
     TreeNode<E> left;
